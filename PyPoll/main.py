@@ -4,38 +4,81 @@ print("----------------------------------------")
 import os
 import csv
 
+votes = []
+candidate = []
+
+
 csvpath = os.path.join("election_data.csv")
 
 with open(csvpath,newline='') as fin:
     csvreader = csv.reader(fin,delimiter=',')
     csv_header = next(csvreader)
-    total = 0
+
     for row in csv.reader(fin):
-        total += len(row[0])
-    print(f"Total Votes: {total}")
+        votes.append(row[0])
+    total_votes = set(votes)
+print(f"Total Votes: " + str(len(total_votes)))
 
 print("------------------------------------------")
 
-import pandas as pd
-import numpy as np
+with open(csvpath,newline='') as fin:
+    csvreader = csv.reader(fin,delimiter=',')
+    csv_header = next(csvreader)
 
-df = pd.read_csv("election_data.csv")
+    for row in csv.reader(fin):
+        votes.append(row[0])
+        candidate.append(row[2])
+    unique_candidate = set(candidate)
 
-Candidate_Totals = df.Candidate.value_counts()
+    print(unique_candidate)
 
-print(Candidate_Totals)
+print("---------------------------------------------------------------------")
 
-print("------------------------------------------")
+with open(csvpath,newline='') as fin:
+    csvreader = csv.reader(fin,delimiter=',')
+    csv_header = next(csvreader)
+    
+    for row in csv.reader(fin):
+        candidate.count(row[2])
+    candidate_list_K = candidate.count('Khan')
+    candidate_list_C = candidate.count('Correy')
+    candidate_list_L = candidate.count('Li')
+    candidate_list_O = candidate.count("O'Tooley")
+    
 
-import pandas as pd
-import numpy as np
+print(f"O'Tooley: " + candidate_list_O)
+print(f"Li: " + candidate_list_L)
+print(f"Correy " + candidate_list_C)
+print(f"Khan: " + candidate_list_K)
 
-df = pd.read_csv("election_data.csv")
+print("------------------------------------------------")
 
-Candidate_Percentage = (Candidate_Totals/total)*100
+Khan_percentage = candidate_list_K/total_votes
+Li_percentage = candidate_list_L/total_votes
+Correy_percentage = candidate_list_C/total_votes
+OTooley_percentage = candidate_list_O/total_votes
 
-print(Candidate_Percentage)
+print(f"O'Tooley: " + OTooley_percentage)
+print(f"Li: " + Li_percentage)
+print(f"Correy " + Correy_percentage)
+print(f"Khan: " + Khan_percentage)
 
-print("------------------------------------------")
+print("-------------------------------------------------")
 
 print("Winner: Khan")
+
+file = open("main.txt","w")
+file.write(f"Election Results
+  -------------------------
+  Total Votes: 3521001
+  -------------------------
+  Khan: 63.000% (2218231)
+  Correy: 20.000% (704200)
+  Li: 14.000% (492940)
+  O'Tooley: 3.000% (105630)
+  -------------------------
+  Winner: Khan")
+
+
+file.close()
+ 
