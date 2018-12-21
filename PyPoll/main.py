@@ -53,10 +53,10 @@ print(f"Khan: " + candidate_list_K)
 
 print("------------------------------------------------")
 
-Khan_percentage = candidate_list_K/total_votes
-Li_percentage = candidate_list_L/total_votes
-Correy_percentage = candidate_list_C/total_votes
-OTooley_percentage = candidate_list_O/total_votes
+Khan_percentage = (candidate_list_K/total_votes)*100
+Li_percentage = (candidate_list_L/total_votes)*100
+Correy_percentage = (candidate_list_C/total_votes)*100
+OTooley_percentage = (candidate_list_O/total_votes)*100
 
 print(f"O'Tooley: " + OTooley_percentage)
 print(f"Li: " + Li_percentage)
