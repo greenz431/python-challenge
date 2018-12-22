@@ -61,7 +61,18 @@ print(f"Khan (%): " + str(Khan_percentage))
 
 print("-------------------------------------------------")
 
-print("Winner: Khan")
+candidate_votes = [Khan, Correy, Li, O_Tooley]
+
+if max(candidate_votes) == Khan:
+    winner = "Khan"
+elif max(candidate_votes) == Correy:
+    winner = "Correy"
+elif max(candidate_votes) == Li:
+    winner = "Li"
+else:
+    winner = "O'Tooley"
+
+print("Winner: " + winner)
 
 file = open("main.txt","w")
 file.write(f"Election Results"
