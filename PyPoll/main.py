@@ -26,7 +26,6 @@ with open(csvpath,newline='') as fin:
     csv_header = next(csvreader)
 
     for row in csv.reader(fin):
-        votes.append(row[0])
         candidate.append(row[2])
     unique_candidate = set(candidate)
 
@@ -38,30 +37,27 @@ with open(csvpath,newline='') as fin:
     csvreader = csv.reader(fin,delimiter=',')
     csv_header = next(csvreader)
     
-    for row in csv.reader(fin):
-        candidate.count(row[2])
-    candidate_list_K = candidate.count('Khan')
-    candidate_list_C = candidate.count('Correy')
-    candidate_list_L = candidate.count('Li')
-    candidate_list_O = candidate.count("O'Tooley")
-    
+O_Tooley = candidate.count("O'Tooley")
+Li = candidate.count('Li')
+Correy = candidate.count('Correy')
+Khan = candidate.count('Khan')
 
-print(f"O'Tooley: " + candidate_list_O)
-print(f"Li: " + candidate_list_L)
-print(f"Correy " + candidate_list_C)
-print(f"Khan: " + candidate_list_K)
+print(f"O'Tooley: " + str(O_Tooley))
+print(f"Li: " + str(Li))
+print(f"Correy " + str(Correy))
+print(f"Khan: " + str(Khan))
 
 print("------------------------------------------------")
 
-Khan_percentage = (candidate_list_K/total_votes)*100
-Li_percentage = (candidate_list_L/total_votes)*100
-Correy_percentage = (candidate_list_C/total_votes)*100
-OTooley_percentage = (candidate_list_O/total_votes)*100
+Khan_percentage = (Khan/len(total_votes))*100
+Li_percentage = (Li/len(total_votes))*100
+Correy_percentage = (Correy/len(total_votes))*100
+OTooley_percentage = (O_Tooley/len(total_votes))*100
 
-print(f"O'Tooley: " + OTooley_percentage)
-print(f"Li: " + Li_percentage)
-print(f"Correy " + Correy_percentage)
-print(f"Khan: " + Khan_percentage)
+print(f"O'Tooley: " + str(OTooley_percentage))
+print(f"Li: " + str(Li_percentage))
+print(f"Correy " + str(Correy_percentage))
+print(f"Khan: " + str(Khan_percentage))
 
 print("-------------------------------------------------")
 
