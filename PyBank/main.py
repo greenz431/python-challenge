@@ -14,11 +14,14 @@ change = []
 with open(csvpath,newline='') as fin:
     csvreader = csv.reader(fin,delimiter=',')
     csv_header = next(csvreader)
-
+    
     for row in csvreader:
         months.append(row[0])
         profit_loss.append(int(row[1]))
-        change.append(int(row[2]))
+
+    for i in range(1,len(profit_loss)):
+        change.append(profit_loss[i]-profit_loss[i-1])
+
     total_months = set(months)
     total_revenue = sum(profit_loss)
     total_change = sum(change)
