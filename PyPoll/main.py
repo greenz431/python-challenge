@@ -54,10 +54,10 @@ Li_percentage = (Li/len(total_votes))*100
 Correy_percentage = (Correy/len(total_votes))*100
 OTooley_percentage = (O_Tooley/len(total_votes))*100
 
-print(f"O'Tooley: " + str(OTooley_percentage))
-print(f"Li: " + str(Li_percentage))
-print(f"Correy " + str(Correy_percentage))
-print(f"Khan: " + str(Khan_percentage))
+print(f"O'Tooley (%): " + str(OTooley_percentage))
+print(f"Li (%): " + str(Li_percentage))
+print(f"Correy (%): " + str(Correy_percentage))
+print(f"Khan (%): " + str(Khan_percentage))
 
 print("-------------------------------------------------")
 
