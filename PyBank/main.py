@@ -43,7 +43,7 @@ file.write("Financial Analysis"
 "----------------------------------------"
 "Total Months: 86"
 "Total Revenue: $38382578"
-"Average Change: $-2288.2"
+"Average Change: $-2315.12"
 "Greatest Increase in Profits: Feb-12 $1926159"
 "Greatest Decrease in Profits: Sep-13 $-2196167")
 
